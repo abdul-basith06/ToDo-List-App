@@ -40,6 +40,35 @@ const TodoWrapper = () => {
       );
     };
 
+    const moveTaskUp=(id)=>{
+        const currentIndex = todos.findIndex((todo) => todo.id === id);
+
+        if (currentIndex === 0) return;
+      
+        const newTodos = [...todos]; 
+      
+        [newTodos[currentIndex], newTodos[currentIndex - 1]] = [
+          newTodos[currentIndex - 1],
+          newTodos[currentIndex],
+        ];
+      
+        setTodos(newTodos);
+    }
+
+    const moveTaskDown= (id)=>{
+        const currentIndex = todos.findIndex((todo) => todo.id === id);
+
+  if (currentIndex === todos.length - 1) return;
+
+  const newTodos = [...todos]; 
+  [newTodos[currentIndex], newTodos[currentIndex + 1]] = [
+    newTodos[currentIndex + 1],
+    newTodos[currentIndex],
+  ];
+
+  setTodos(newTodos);
+    }
+
     useEffect(()=>{
         document.title = `You have ${todos.length} pending task.`
     })
@@ -59,6 +88,8 @@ const TodoWrapper = () => {
               deleteTodo={deleteTodo}
               editTodo={editTodo}
               toggleComplete={toggleComplete}
+              moveTaskUp={moveTaskUp}
+              moveTaskDown={moveTaskDown}
             />
           )
         )}
