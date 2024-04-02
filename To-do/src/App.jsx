@@ -1,11 +1,12 @@
 
 import './App.css'
+import TodoWrapper from './components/TodoWrapper'
 
 function App() {
 
   return (
     <>
-    <h1>King</h1>
+    <TodoWrapper />
     </>
   )
 }
