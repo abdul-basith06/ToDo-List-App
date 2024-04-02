@@ -21,6 +21,10 @@ const TodoWrapper = () => {
         );
       }
 
+      const deleteTodo = (id)=> {
+        setTodos(todos.filter(todo => todo.id !== id))
+      }
+
   return (
     <div className='TodoWrapper'>
         <h1>Do Epic Shite !</h1>
@@ -32,7 +36,7 @@ const TodoWrapper = () => {
           <Todo
             key={todo.id}
             task={todo}
-            // deleteTodo={deleteTodo}
+            deleteTodo={deleteTodo}
             // editTodo={editTodo}
             toggleComplete={toggleComplete}
           />
