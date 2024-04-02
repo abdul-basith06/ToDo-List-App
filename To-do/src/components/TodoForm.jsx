@@ -13,7 +13,7 @@ const TodoForm = ({addTodo}) => {
 
   return (
     <form onSubmit={handleSubmit} className="TodoForm">
-    <input value={value} type="text" onChange={(e)=> setValue(e.target.value)}  className="todo-input" placeholder='What is the task today?' />
+    <input value={value} type="text" onChange={(e)=> setValue(e.target.value)}  className="todo-input" placeholder='Lets get this party started..?' />
     <button type="submit" className='todo-btn'>Add Task</button>
   </form>
   )
